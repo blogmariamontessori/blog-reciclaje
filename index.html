@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reciclar en el Colegio María Montessori</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F1F6F3; --ink:#17211C; --muted:#4B5A52; --line:#CBD8D0;
+  --green:#2E7D4F; --green-d:#1E5A37; --black:#2B2F33; --white:#FFFFFF; --sun:#F2C230;
+  --font:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0F1713;--ink:#E8F0EB;--muted:#A5B6AC;--line:#2B3A32;--green:#58B77F;--green-d:#8FD6AC;--white:#1A2620;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:1.05rem;line-height:1.6}
+a{color:var(--green-d)}
+.wrap{max-width:1000px;margin:0 auto;padding:0 1.25rem}
+header.top{border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;align-items:center;justify-content:space-between;padding-block:.9rem}
+.brand{font-weight:800;font-size:1.1rem;text-decoration:none;color:var(--ink)}
+nav a{margin-left:1.1rem;text-decoration:none;color:var(--muted);font-weight:600}
+nav a:hover,nav a:focus-visible{color:var(--green-d);text-decoration:underline}
+.hero{padding:3.5rem 0 2.5rem}
+h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.05;font-weight:800;margin:0 0 1rem;max-width:16ch}
+.lead{max-width:56ch;color:var(--muted);font-size:1.15rem;margin:0 0 2rem}
+.bins{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem}
+.bin{border-radius:14px 14px 10px 10px;padding:1.1rem 1.2rem 1.3rem;border:2px solid var(--line);border-top-width:14px}
+.bin h3{margin:0 0 .25rem;font-size:1.25rem}
+.bin p{margin:0;font-size:.98rem}
+.bin.blanca{background:#FFFFFF;border-color:#D5DDD8;border-top-color:#EDEDED;color:#17211C}
+.bin.negra{background:var(--black);border-color:var(--black);border-top-color:#111;color:#F1F4F2}
+.bin.verde{background:var(--green);border-color:var(--green);border-top-color:var(--green-d);color:#fff}
+section{padding:2.5rem 0}
+h2{font-size:clamp(1.6rem,4vw,2.3rem);margin:0 0 1.25rem;line-height:1.15}
+.posts{display:grid;gap:1.5rem}
+article.post{background:var(--white);border:1px solid var(--line);border-left:6px solid var(--sun);border-radius:6px;padding:1.25rem 1.4rem}
+article.post h3{margin:0 0 .2rem;font-size:1.3rem}
+article.post time{color:var(--muted);font-size:.9rem}
+article.post p{margin:.6rem 0 0;max-width:68ch}
+#buzon{background:var(--white);border-block:1px solid var(--line)}
+form{display:grid;gap:1rem;max-width:620px}
+label{font-weight:600;display:grid;gap:.3rem}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:6px;padding:.65rem .75rem;width:100%}
+textarea{min-height:140px;resize:vertical}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+button{font:inherit;font-weight:800;background:var(--green);color:#fff;border:0;border-radius:6px;padding:.8rem 1.4rem;cursor:pointer;justify-self:start}
+button:hover{background:var(--green-d)}
+button:disabled{opacity:.6;cursor:wait}
+.msg{padding:.8rem 1rem;border-radius:6px;font-weight:600;display:none}
+.msg.ok{display:block;background:#DDF1E4;color:#14472B}
+.msg.err{display:block;background:#FBE0DC;color:#7A1F14}
+.hp{position:absolute;left:-9999px}
+.hint{color:var(--muted);font-size:.92rem;margin:0}
+footer{padding:2rem 0;color:var(--muted);font-size:.95rem}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#">Reciclar en el Colegio María Montessori</a>
+    <nav aria-label="Principal">
+      <a href="#separar">Cómo separar</a>
+      <a href="#entradas">Entradas</a>
+      <a href="#buzon">Buzón</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="hero">
+      <h1>Cada residuo tiene su caneca</h1>
+      <p class="lead">Un blog de la comunidad del Colegio María Montessori para aprender a separar en la fuente, compartir lo que hacemos y mejorar entre todos.</p>
+
+      <div class="bins" id="separar">
+        <div class="bin blanca">
+          <h3>Caneca blanca</h3>
+          <p>Aprovechables limpios y secos: plástico, vidrio, metal, papel y cartón.</p>
+        </div>
+        <div class="bin negra">
+          <h3>Caneca negra</h3>
+          <p>No aprovechables: papel higiénico, servilletas, empaques sucios, barrido.</p>
+        </div>
+        <div class="bin verde">
+          <h3>Caneca verde</h3>
+          <p>Orgánicos: restos de comida, cáscaras, residuos de jardín.</p>
+        </div>
+      </div>
+    </div>
+
+    <section id="entradas">
+      <h2>Entradas del blog</h2>
+      <div class="posts">
+        <article class="post">
+          <h3>Por qué separamos en el colegio</h3>
+          <time datetime="2026-11-10">10 de noviembre de 2026</time>
+          <p>Entrada de ejemplo: cuenta aquí por qué el colegio recicla, quién participa y qué se busca lograr este año. Edita este texto en el archivo index.html.</p>
+        </article>
+        <article class="post">
+          <h3>Lo que sí y lo que no va en la caneca blanca</h3>
+          <time datetime="2026-11-10">10 de noviembre de 2026</time>
+          <p>Entrada de ejemplo: una botella vacía y seca sí; un empaque con restos de comida no. Agrega fotos o ejemplos de los salones.</p>
+        </article>
+        <article class="post">
+          <h3>Nuestra campaña del mes</h3>
+          <time datetime="2026-11-10">10 de noviembre de 2026</time>
+          <p>Entrada de ejemplo: presenta aquí la actividad, el reto por cursos o la jornada de recolección que se viene.</p>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <section id="buzon">
+    <div class="wrap">
+      <h2>Buzón de sugerencias, quejas y reclamos</h2>
+      <p class="lead">Cuéntanos qué podemos mejorar en el reciclaje del colegio. Tu mensaje llega a la coordinación y queda registrado.</p>
+      <form id="pqr" novalidate>
+        <label>Tipo de mensaje
+          <select name="tipo" required>
+            <option value="Sugerencia">Sugerencia</option>
+            <option value="Queja">Queja</option>
+            <option value="Reclamo">Reclamo</option>
+          </select>
+        </label>
+        <label>Nombre (opcional)
+          <input type="text" name="nombre" autocomplete="name">
+        </label>
+        <label>Curso o rol (estudiante de 5.º, docente, padre de familia…)
+          <input type="text" name="rol">
+        </label>
+        <label>Correo (opcional, solo si quieres respuesta)
+          <input type="email" name="correo" autocomplete="email">
+        </label>
+        <label>Tu mensaje
+          <textarea name="mensaje" required maxlength="2000"></textarea>
+        </label>
+        <input class="hp" type="text" name="web" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <p class="hint">No escribas datos sensibles. Máximo 2000 caracteres.</p>
+        <button type="submit" id="enviar">Enviar mensaje</button>
+        <div id="estado" class="msg" role="status"></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Blog escolar sobre reciclaje · Colegio María Montessori</div>
+</footer>
+
+<script>
+// 1) Pega aquí la URL de tu Apps Script (termina en /exec).
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxz2AZvDH2f6WqYKYfCl754gMGdoPCRoPHwBGG4aFcqXmNF_QSkPO1lamtlLTlwGB4/exec";
+
+const form = document.getElementById("pqr");
+const estado = document.getElementById("estado");
+const btn = document.getElementById("enviar");
+
+function mostrar(texto, clase){ estado.textContent = texto; estado.className = "msg " + clase; }
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  if (form.web.value) return;               // anti-spam
+  if (!form.mensaje.value.trim()) { mostrar("Escribe tu mensaje antes de enviar.", "err"); return; }
+  if (SCRIPT_URL.startsWith("PEGA_AQUI")) { mostrar("El buzón aún no está conectado a la hoja de cálculo.", "err"); return; }
+  btn.disabled = true;
+  try {
+    await fetch(SCRIPT_URL, { method: "POST", mode: "no-cors", body: new URLSearchParams(new FormData(form)) });
+    form.reset();
+    mostrar("Mensaje enviado. Gracias por ayudarnos a mejorar.", "ok");
+  } catch (err) {
+    mostrar("No se pudo enviar. Revisa tu conexión e inténtalo de nuevo.", "err");
+  }
+  btn.disabled = false;
+});
+</script>
+</body>
+</html>
