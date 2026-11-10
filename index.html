@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Reciclar en el Colegio María Montessori</title>
+<title>Reciclaje · Colegio María Montessori, El Copey, Cesar</title>
+<link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
@@ -22,7 +23,9 @@ a{color:var(--green-d)}
 .wrap{max-width:1000px;margin:0 auto;padding:0 1.25rem}
 header.top{border-bottom:1px solid var(--line)}
 header.top .wrap{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;align-items:center;justify-content:space-between;padding-block:.9rem}
-.brand{font-weight:800;font-size:1.1rem;text-decoration:none;color:var(--ink)}
+.brand{display:flex;align-items:center;gap:.75rem;font-weight:800;font-size:1.1rem;line-height:1.2;text-decoration:none;color:var(--ink)}
+.brand img{border-radius:50%;flex:none}
+.brand small{font-weight:600;font-size:.85rem;color:var(--muted)}
 nav a{margin-left:1.1rem;text-decoration:none;color:var(--muted);font-weight:600}
 nav a:hover,nav a:focus-visible{color:var(--green-d);text-decoration:underline}
 .hero{padding:3.5rem 0 2.5rem}
@@ -63,7 +66,7 @@ footer{padding:2rem 0;color:var(--muted);font-size:.95rem}
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#">Reciclar en el Colegio María Montessori</a>
+    <a class="brand" href="#"><img src="logo.png" alt="Escudo del Colegio María Montessori, El Copey, Cesar" width="52" height="52"><span>Colegio María Montessori<br><small>El Copey, Cesar · Reciclaje</small></span></a>
     <nav aria-label="Principal">
       <a href="#separar">Cómo separar</a>
       <a href="#entradas">Entradas</a>
@@ -150,12 +153,12 @@ footer{padding:2rem 0;color:var(--muted);font-size:.95rem}
 </main>
 
 <footer>
-  <div class="wrap">Blog escolar sobre reciclaje · Colegio María Montessori</div>
+  <div class="wrap">Blog escolar sobre reciclaje · Colegio María Montessori, El Copey, Cesar</div>
 </footer>
 
 <script>
 // 1) Pega aquí la URL de tu Apps Script (termina en /exec).
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxz2AZvDH2f6WqYKYfCl754gMGdoPCRoPHwBGG4aFcqXmNF_QSkPO1lamtlLTlwGB4/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzGDsVsp08rmgO6DQENbThUCpsx50VmXSqnlE6OohJHWOXmqBJN-E064-Yqc6AT3ZDW/exec";
 
 const form = document.getElementById("pqr");
 const estado = document.getElementById("estado");
@@ -181,3 +184,4 @@ form.addEventListener("submit", async (e) => {
 </script>
 </body>
 </html>
+
